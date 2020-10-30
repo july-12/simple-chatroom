@@ -1,0 +1,133 @@
+.center-container {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.chat {
+    width: 660px;
+    height: 500px;
+    margin: 0 auto;
+    border: 1px solid #dfe4ea;
+    border-radius: 4px;
+    background: #f3f6f9;
+    display: flex;
+}
+
+.chat aside {
+    width: 170px;
+    padding-top: 45px;
+    border-right: 1px solid #dfe4ea;
+}
+
+.chat aside.user-list .user {
+    height: 56px;
+    display: flex;
+    align-items: center;
+    padding: 0 4px;
+    border-top: 1px solid #dfe4e9;
+}
+
+.chat aside.user-list .user .user-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 1px solid #747d8c;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.chat aside.user-list .user .user-name {
+    flex: 1;
+    margin-left: 8px;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.chat main {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.chat main .msg-area {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    border-bottom: 1px solid #dfe4ea;
+}
+
+.chat main .msg-area header {
+    height: 45px;
+    line-height: 45px;
+    padding: 0 10px;
+    border-right: 1px solid #dfe4ea;
+}
+
+.chat main .msg-area main {
+    flex: 1;
+    background: #fff;
+    padding: 10px;
+}
+.chat main .msg-area main .msg {
+    display: flex;
+    margin-bottom: 10px;
+}
+
+.chat main .msg-area main .msg .msg-sender-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 1px solid #747d8c;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.chat main .msg-area main .msg .msg-text-area {
+    margin-left: 10px;
+}
+
+.chat main .msg-area main .msg .msg-text-area .sender-name {
+  font-size: 11px;
+  color: #787878;
+  margin-bottom: 6px;
+}
+
+.chat main .msg-area main .msg .msg-text-area .text {
+  font-size: 13px;
+}
+
+.chat main .dialog {
+    display: flex;
+    height: 120px;
+}
+
+.chat main .dialog textarea {
+    flex: 1;
+    resize: none;
+    border: none;
+    outline: none;
+    padding: 6px 8px;
+}
+
+.chat main .dialog button {
+    width: 80px;
+    height: 100%;
+    cursor: pointer;
+    border: none;
+    outline: none;
+    opacity: 0.8;
+    background: #70a1ff;
+}
+
+.chat main .dialog button:hover {
+    opacity: 1;
+}
+
+.chat main .dialog button.disabled {
+    cursor: not-allowed;
+    background: #747d8c;
+}
