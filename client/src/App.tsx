@@ -1,8 +1,16 @@
 import React, { useRef, useState, useEffect, useCallback } from 'react';
 
-import './app.css';
+import './App.css';
 
-const user = [];
+type User = {
+    id: string | number;
+    name: string;
+};
+
+type Msg = {
+    sender: User;
+    text: string;
+};
 
 type WsRefProps = {
     ws: WebSocket | null;
@@ -24,7 +32,7 @@ const App = () => {
         }
     }, [value]);
 
-    const listenMessageFromServer = (event) => {
+    const listenMessageFromServer = (event: MessageEvent) => {
         const data = JSON.parse(event.data);
         setData(data);
     };
@@ -36,7 +44,7 @@ const App = () => {
         ws.onmessage = listenMessageFromServer;
     }, []);
 
-    const renderUser = (user) => {
+    const renderUser = (user: User) => {
         return (
             <div key={user.id} className="user">
                 <div className="user-avatar">{user.name.charAt(0)}</div>
@@ -45,9 +53,9 @@ const App = () => {
         );
     };
 
-    const renderMessage = (msg) => {
+    const renderMessage = (msg: Msg, index: number) => {
         return (
-            <div key={msg.id} className="msg">
+            <div key={index} className="msg">
                 <div className="msg-sender-avatar">{msg.sender.name.charAt(0)}</div>
                 <div className="msg-text-area">
                     <div className="sender-name">{msg.sender.name}</div>
