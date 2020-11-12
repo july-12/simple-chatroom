@@ -1,6 +1,6 @@
 import React, { useRef, useState, useEffect, useCallback } from 'react';
 
-import './app.css';
+import './chat.css';
 
 type User = {
     id: string | number;
