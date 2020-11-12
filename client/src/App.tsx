@@ -1,6 +1,6 @@
 import React, { useRef, useState, useEffect, useCallback } from 'react';
 
-import './App.css';
+import './app.css';
 
 type User = {
     id: string | number;

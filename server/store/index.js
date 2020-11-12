@@ -26,6 +26,11 @@ const chat  = {
 
 */
 
+function User(id, name) {
+    this.id = id;
+    this.name = name;
+}
+
 function Room(id) {
     this.id = id;
     this.name = '';
@@ -44,7 +49,7 @@ function Room(id) {
     };
 }
 
-export default function Store() {
+function Store() {
     this.counter = 1;
     this.rooms = [];
     this.users = [];
@@ -70,12 +75,12 @@ export default function Store() {
     };
 
     this.createUser = function (name) {
-        const user = {
-            id: uuidv4(),
-            name: name || `user${this.counter++}`
-        };
-
+        const id = uuidv4();
+        const username = name || `user${this.counter++}`;
+        const user = new User(id, username);
         this.users.push(user);
         return user;
     };
 }
+
+module.exports = new Store();

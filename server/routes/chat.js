@@ -1,8 +1,7 @@
 var express = require('express');
 var router = express.Router();
-var Store = require('../store');
 
-const store = new Store();
+var store = require('../store');
 
 const notFilterSelf = true;
 
